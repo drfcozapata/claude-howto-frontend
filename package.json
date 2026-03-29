@@ -1,9 +1,9 @@
 {
-  "name": "claude-howto-frontend",
+  "name": "domina-claude-code",
   "version": "1.0.0",
   "type": "module",
-  "description": "Frontend Vue.js para la guía Claude HowTo",
-  "author": "Claude HowTo Team",
+  "description": "Frontend Vue.js para la guía Domina Claude Code",
+  "author": "Francisco Zapata",
   "license": "MIT",
   "scripts": {
     "dev": "vite",
@@ -39,6 +39,6 @@
     "vue-tsc": "^3.2.6"
   },
   "engines": {
-    "node": ">=20.0.0"
+    "node": ">=22.0.0"
   }
 }
