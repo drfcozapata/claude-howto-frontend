@@ -84,7 +84,7 @@ import { ref, watch } from 'vue'
 import { useRouter } from 'vue-router'
 import { useDark, useToggle } from '@vueuse/core'
 import { 
-  Menu, X, Search, Sun, Moon, Github, Wrench 
+  Menu, X, Search, Sun, Moon, Github 
 } from 'lucide-vue-next'
 import { useSettingsStore } from '@/stores/settings'
 
