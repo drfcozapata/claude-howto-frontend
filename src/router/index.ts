@@ -62,7 +62,7 @@ const router = createRouter({
 
 // Update document title on route change
 router.beforeEach((to, _from, next) => {
-  const baseTitle = 'Claude HowTo'
+  const baseTitle = 'Domina Claude Code'
   if (to.meta.title) {
     document.title = `${to.meta.title} - ${baseTitle}`
   } else {
