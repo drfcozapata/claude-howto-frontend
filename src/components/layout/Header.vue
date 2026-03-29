@@ -13,13 +13,7 @@
         </button>
         
         <RouterLink to="/" class="flex items-center gap-3 group">
-          <div class="w-10 h-10 rounded-xl bg-linear-to-br from-primary-500 to-secondary-600 flex items-center justify-center shadow-lg group-hover:shadow-primary-500/25 transition-shadow">
-            <span class="text-white font-bold text-lg">CH</span>
-          </div>
-          <div class="hidden sm:block">
-            <h1 class="text-xl font-bold text-gray-900 dark:text-white">Claude HowTo</h1>
-            <p class="text-xs text-gray-500 dark:text-gray-400">Domina Claude Code</p>
-          </div>
+          <img src="/resources/logos/logo.svg" alt="Domina Claude Code" class="w-36" />
         </RouterLink>
       </div>
 
@@ -52,18 +46,18 @@
         </button>
 
         <!-- Tools -->
-        <RouterLink 
+        <!-- <RouterLink 
           to="/tools"
           class="p-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors"
           aria-label="Tools"
         >
           <Wrench class="w-5 h-5" />
-        </RouterLink>
+        </RouterLink> -->
 
         <!-- Dark Mode Toggle -->
         <button 
           @click="toggleDark()"
-          class="p-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors"
+          class="p-2 rounded-lg dark:text-gray-100 hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors"
           aria-label="Toggle dark mode"
         >
           <Sun v-if="isDark" class="w-5 h-5" />
@@ -72,10 +66,10 @@
 
         <!-- GitHub Link -->
         <a 
-          href="https://github.com/luongnv89/claude-howto"
+          href="https://github.com/drfcozapata/domina-claude-code"
           target="_blank"
           rel="noopener noreferrer"
-          class="p-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors"
+          class="p-2 rounded-lg dark:text-gray-100 hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors"
           aria-label="GitHub"
         >
           <Github class="w-5 h-5" />

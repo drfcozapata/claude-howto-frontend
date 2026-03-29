@@ -5,16 +5,10 @@
         <!-- Brand -->
         <div class="col-span-1">
           <div class="flex items-center gap-3 mb-4">
-            <div class="w-10 h-10 rounded-xl bg-linear-to-br from-primary-500 to-secondary-600 flex items-center justify-center">
-              <span class="text-white font-bold text-lg">CH</span>
-            </div>
-            <div>
-              <h3 class="font-bold text-gray-900 dark:text-white">Claude HowTo</h3>
-              <p class="text-xs text-gray-500 dark:text-gray-400">Domina Claude Code</p>
-            </div>
+            <img src="/resources/logos/logo.svg" alt="Domina Claude Code" class="w-52" />
           </div>
           <p class="text-sm text-gray-600 dark:text-gray-400">
-            Guía completa y gratuita para dominar Claude Code en un fin de semana.
+            Guía completa y gratuita para dominar Claude Code.
           </p>
         </div>
 
@@ -37,11 +31,11 @@
                 Referencia Rápida
               </RouterLink>
             </li>
-            <li>
+            <!-- <li>
               <RouterLink to="/tools" class="text-gray-600 dark:text-gray-400 hover:text-primary-600 dark:hover:text-primary-400 transition-colors">
                 Herramientas
               </RouterLink>
-            </li>
+            </li> -->
           </ul>
         </div>
 
@@ -56,7 +50,7 @@
               </a>
             </li>
             <li>
-              <a href="https://github.com/luongnv89/claude-howto" target="_blank" rel="noopener noreferrer" class="text-gray-600 dark:text-gray-400 hover:text-primary-600 dark:hover:text-primary-400 transition-colors flex items-center gap-1">
+              <a href="https://github.com/drfcozapata/domina-claude-code" target="_blank" rel="noopener noreferrer" class="text-gray-600 dark:text-gray-400 hover:text-primary-600 dark:hover:text-primary-400 transition-colors flex items-center gap-1">
                 GitHub Repository
                 <ExternalLink class="w-3 h-3" />
               </a>
@@ -79,18 +73,18 @@
           <p class="text-sm text-gray-600 dark:text-gray-400">
             MIT License - Libre para usar, modificar y distribuir.
           </p>
-          <div class="mt-4 flex items-center gap-2">
-            <a href="https://github.com/luongnv89/claude-howto/stargazers" target="_blank" rel="noopener noreferrer">
-              <img src="https://img.shields.io/github/stars/luongnv89/claude-howto?style=flat" alt="GitHub Stars" class="h-5" />
+          <!-- <div class="mt-4 flex items-center gap-2">
+            <a href="https://github.com/drfcozapata/domina-claude-code/stargazers" target="_blank" rel="noopener noreferrer">
+              <img src="https://img.shields.io/github/stars/drfcozapata/domina-claude-code?style=flat" alt="GitHub Stars" class="h-5" />
             </a>
-          </div>
+          </div> -->
         </div>
       </div>
 
       <!-- Bottom Bar -->
       <div class="mt-8 pt-8 border-t border-gray-200 dark:border-gray-700 flex flex-col sm:flex-row justify-between items-center gap-4">
         <p class="text-sm text-gray-600 dark:text-gray-400">
-          © {{ new Date().getFullYear() }} Claude HowTo. Creado con ❤️ para la comunidad.
+          Todos los derechos reservados © {{ new Date().getFullYear() }} Creado con ❤️ para la comunidad por <a href="https://franciscozapata.dev" target="_blank" rel="noopener noreferrer" class="text-primary-600 hover:underline">Francisco Zapata</a>
         </p>
         <div class="flex items-center gap-4">
           <span class="text-sm text-gray-500 dark:text-gray-400">

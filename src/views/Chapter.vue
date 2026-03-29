@@ -1,6 +1,6 @@
 <template>
-  <div class="min-h-screen bg-gray-50 dark:bg-gray-900">
-    <div class="container mx-auto px-4 py-12">
+  <div class="min-h-screen bg-gray-50 dark:bg-gray-900 py-12 pb-0">
+    <div class="container mx-auto px-4 py-8">
       <!-- Breadcrumbs -->
       <nav class="flex items-center gap-2 text-sm text-gray-600 dark:text-gray-400 mb-6">
         <RouterLink to="/" class="hover:text-primary-600 dark:hover:text-primary-400">Inicio</RouterLink>

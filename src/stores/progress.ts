@@ -4,9 +4,9 @@ import { useStorage } from '@vueuse/core'
 
 export const useProgressStore = defineStore('progress', () => {
   // Use localStorage to persist progress
-  const completedFiles = useStorage<string[]>('claude-howto-completed', [])
-  const currentChapter = useStorage<string | null>('claude-howto-current', null)
-  const notes = useStorage<Record<string, string>>('claude-howto-notes', {})
+  const completedFiles = useStorage<string[]>('domina-claude-code-completed', [])
+  const currentChapter = useStorage<string | null>('domina-claude-code-current', null)
+  const notes = useStorage<Record<string, string>>('domina-claude-code-notes', {})
 
   const markAsCompleted = (fileId: string) => {
     if (!completedFiles.value.includes(fileId)) {

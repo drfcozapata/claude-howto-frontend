@@ -1,5 +1,5 @@
 <template>
-  <div class="min-h-screen bg-gray-50 dark:bg-gray-900 py-12">
+  <div class="min-h-screen bg-gray-50 dark:bg-gray-900 py-12 pb-0">
     <div class="container mx-auto px-4">
       <div class="max-w-4xl mx-auto">
         <h1 class="text-4xl font-bold text-gray-900 dark:text-white mb-4">
@@ -99,31 +99,31 @@
               </thead>
               <tbody>
                 <tr class="border-b border-gray-200 dark:border-gray-700">
-                  <td class="py-3 px-4 font-medium">Slash Commands</td>
+                  <td class="py-3 px-4 dark:text-gray-400 font-medium">Slash Commands</td>
                   <td class="py-3 px-4 text-gray-600 dark:text-gray-400">Manual (/cmd)</td>
                   <td class="py-3 px-4 text-gray-600 dark:text-gray-400">Solo sesión</td>
                   <td class="py-3 px-4 text-gray-600 dark:text-gray-400">Atajos rápidos</td>
                 </tr>
                 <tr class="border-b border-gray-200 dark:border-gray-700">
-                  <td class="py-3 px-4 font-medium">Memory</td>
+                  <td class="py-3 px-4 dark:text-gray-400 font-medium">Memory</td>
                   <td class="py-3 px-4 text-gray-600 dark:text-gray-400">Auto-cargado</td>
                   <td class="py-3 px-4 text-gray-600 dark:text-gray-400">Entre sesiones</td>
                   <td class="py-3 px-4 text-gray-600 dark:text-gray-400">Aprendizaje largo plazo</td>
                 </tr>
                 <tr class="border-b border-gray-200 dark:border-gray-700">
-                  <td class="py-3 px-4 font-medium">Skills</td>
+                  <td class="py-3 px-4 dark:text-gray-400 font-medium">Skills</td>
                   <td class="py-3 px-4 text-gray-600 dark:text-gray-400">Auto-invocado</td>
                   <td class="py-3 px-4 text-gray-600 dark:text-gray-400">Sistema de archivos</td>
                   <td class="py-3 px-4 text-gray-600 dark:text-gray-400">Flujos automatizados</td>
                 </tr>
                 <tr class="border-b border-gray-200 dark:border-gray-700">
-                  <td class="py-3 px-4 font-medium">Subagents</td>
+                  <td class="py-3 px-4 dark:text-gray-400 font-medium">Subagents</td>
                   <td class="py-3 px-4 text-gray-600 dark:text-gray-400">Auto-delegado</td>
                   <td class="py-3 px-4 text-gray-600 dark:text-gray-400">Contexto aislado</td>
                   <td class="py-3 px-4 text-gray-600 dark:text-gray-400">Distribución de tareas</td>
                 </tr>
                 <tr>
-                  <td class="py-3 px-4 font-medium">Hooks</td>
+                  <td class="py-3 px-4 dark:text-gray-400 font-medium">Hooks</td>
                   <td class="py-3 px-4 text-gray-600 dark:text-gray-400">Por evento</td>
                   <td class="py-3 px-4 text-gray-600 dark:text-gray-400">Configurado</td>
                   <td class="py-3 px-4 text-gray-600 dark:text-gray-400">Automatización</td>

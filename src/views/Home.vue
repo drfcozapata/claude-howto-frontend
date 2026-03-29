@@ -128,7 +128,7 @@
             
       <!-- Stats -->
       <div class="container mx-auto px-4 pb-12">
-        <div class="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-4xl mx-auto">
+        <div class="grid grid-cols-2 md:grid-cols-3 gap-4 max-w-4xl mx-auto">
           <div class="text-center p-4 rounded-xl bg-white/10 backdrop-blur-sm">
             <p class="text-3xl font-bold">10</p>
             <p class="text-sm text-primary-200">Módulos</p>
@@ -140,10 +140,6 @@
           <div class="text-center p-4 rounded-xl bg-white/10 backdrop-blur-sm">
             <p class="text-3xl font-bold">11-13h</p>
             <p class="text-sm text-primary-200">Duración Total</p>
-          </div>
-          <div class="text-center p-4 rounded-xl bg-white/10 backdrop-blur-sm">
-            <p class="text-3xl font-bold">3,900+</p>
-            <p class="text-sm text-primary-200">Estrellas GitHub</p>
           </div>
         </div>
       </div>
@@ -167,6 +163,14 @@
         </div>
       </div>
     </section>
+
+    <footer class="py-6 bg-gray-50 dark:bg-gray-900">
+      <div class="container mx-auto px-4">
+        <div class="text-center">
+          <p class="text-xs dark:text-slate-100">Todos los derechos reservados &copy; 2026 by <a href="https://franciscozapata.dev" target="_blank" rel="noopener noreferrer" class="text-primary-600 hover:underline">Francisco Zapata</a></p>
+        </div>
+      </div>
+    </footer>
   </div>
 </template>
 

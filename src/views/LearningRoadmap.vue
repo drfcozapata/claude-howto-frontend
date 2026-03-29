@@ -1,5 +1,5 @@
 <template>
-  <div class="min-h-screen bg-gray-50 dark:bg-gray-900 py-12">
+  <div class="min-h-screen bg-gray-50 dark:bg-gray-900 py-12 pb-0">
     <div class="container mx-auto px-4">
       <!-- Breadcrumb -->
       <nav class="flex items-center gap-2 text-sm text-gray-600 dark:text-gray-400 mb-6">
