@@ -56,10 +56,24 @@
   }
 }
 
+/* Dark Mode Configuration */
+@custom-variant dark (&:where(.dark, .dark *));
+
 /* Base Styles */
 @layer base {
   html {
     scroll-behavior: smooth;
+  }
+  
+  body {
+    background-color: rgb(249 250 251);
+    color: rgb(17 24 39);
+    -webkit-font-smoothing: antialiased;
+  }
+  
+  .dark body {
+    background-color: rgb(17 24 39);
+    color: rgb(243 244 246);
   }
 }
 

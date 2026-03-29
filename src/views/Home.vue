@@ -34,7 +34,7 @@
     </section>
 
     <!-- Features Section -->
-    <section class="py-20 bg-gray-50 dark:bg-gray-900">
+    <section class="py-20 bg-gray-100 dark:bg-gray-900">
       <div class="container mx-auto px-4">
         <div class="text-center mb-16">
           <h2 class="text-3xl sm:text-4xl font-bold text-gray-900 dark:text-white mb-4">
@@ -163,14 +163,6 @@
         </div>
       </div>
     </section>
-
-    <footer class="py-6 bg-gray-50 dark:bg-gray-900">
-      <div class="container mx-auto px-4">
-        <div class="text-center">
-          <p class="text-xs dark:text-slate-100">Todos los derechos reservados &copy; 2026 by <a href="https://franciscozapata.dev" target="_blank" rel="noopener noreferrer" class="text-primary-600 hover:underline">Francisco Zapata</a></p>
-        </div>
-      </div>
-    </footer>
   </div>
 </template>
 

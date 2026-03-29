@@ -3,7 +3,7 @@
     <div class="container mx-auto px-4 h-16 flex items-center justify-between">
       <!-- Left: Logo & Menu Toggle -->
       <div class="flex items-center gap-4">
-        <button 
+        <button
           @click="toggleSidebar"
           class="lg:hidden p-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors"
           aria-label="Toggle menu"
@@ -11,7 +11,7 @@
           <Menu v-if="!isSidebarOpen" class="w-6 h-6" />
           <X v-else class="w-6 h-6" />
         </button>
-        
+
         <RouterLink to="/" class="flex items-center gap-3 group">
           <img src="/resources/logos/logo.svg" alt="Domina Claude Code" class="w-36" />
         </RouterLink>
@@ -37,7 +37,7 @@
       <!-- Right: Actions -->
       <div class="flex items-center gap-2">
         <!-- Mobile Search Toggle -->
-        <button 
+        <button
           @click="$router.push('/search')"
           class="md:hidden p-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors"
           aria-label="Search"
@@ -45,19 +45,10 @@
           <Search class="w-5 h-5" />
         </button>
 
-        <!-- Tools -->
-        <!-- <RouterLink 
-          to="/tools"
-          class="p-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors"
-          aria-label="Tools"
-        >
-          <Wrench class="w-5 h-5" />
-        </RouterLink> -->
-
         <!-- Dark Mode Toggle -->
-        <button 
+        <button
           @click="toggleDark()"
-          class="p-2 rounded-lg dark:text-gray-100 hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors"
+          class="p-2 rounded-lg text-gray-600 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors"
           aria-label="Toggle dark mode"
         >
           <Sun v-if="isDark" class="w-5 h-5" />
@@ -65,11 +56,11 @@
         </button>
 
         <!-- GitHub Link -->
-        <a 
+        <a
           href="https://github.com/drfcozapata/domina-claude-code"
           target="_blank"
           rel="noopener noreferrer"
-          class="p-2 rounded-lg dark:text-gray-100 hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors"
+          class="p-2 rounded-lg text-gray-600 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors"
           aria-label="GitHub"
         >
           <Github class="w-5 h-5" />
@@ -83,15 +74,24 @@
 import { ref, watch } from 'vue'
 import { useRouter } from 'vue-router'
 import { useDark, useToggle } from '@vueuse/core'
-import { 
-  Menu, X, Search, Sun, Moon, Github 
+import {
+  Menu, X, Search, Sun, Moon, Github
 } from 'lucide-vue-next'
 import { useSettingsStore } from '@/stores/settings'
 
 const router = useRouter()
 const settingsStore = useSettingsStore()
 
-const isDark = useDark()
+// Dark mode setup
+const isDark = useDark({
+  selector: 'html',
+  attribute: 'class',
+  valueDark: 'dark',
+  valueLight: '',
+  storageKey: 'theme-preference',
+  initialValue: 'dark'
+})
+
 const toggleDark = useToggle(isDark)
 
 const searchQuery = ref('')
