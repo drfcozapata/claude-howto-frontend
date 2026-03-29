@@ -1,0 +1,131 @@
+<template>
+  <header class="sticky top-0 z-50 w-full border-b border-gray-200 dark:border-gray-700 bg-white/80 dark:bg-gray-900/80 backdrop-blur-md">
+    <div class="container mx-auto px-4 h-16 flex items-center justify-between">
+      <!-- Left: Logo & Menu Toggle -->
+      <div class="flex items-center gap-4">
+        <button 
+          @click="toggleSidebar"
+          class="lg:hidden p-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors"
+          aria-label="Toggle menu"
+        >
+          <Menu v-if="!isSidebarOpen" class="w-6 h-6" />
+          <X v-else class="w-6 h-6" />
+        </button>
+        
+        <RouterLink to="/" class="flex items-center gap-3 group">
+          <div class="w-10 h-10 rounded-xl bg-linear-to-br from-primary-500 to-secondary-600 flex items-center justify-center shadow-lg group-hover:shadow-primary-500/25 transition-shadow">
+            <span class="text-white font-bold text-lg">CH</span>
+          </div>
+          <div class="hidden sm:block">
+            <h1 class="text-xl font-bold text-gray-900 dark:text-white">Claude HowTo</h1>
+            <p class="text-xs text-gray-500 dark:text-gray-400">Domina Claude Code</p>
+          </div>
+        </RouterLink>
+      </div>
+
+      <!-- Center: Search -->
+      <div class="flex-1 max-w-xl mx-4 hidden md:block">
+        <div class="relative">
+          <Search class="absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 text-gray-400" />
+          <input
+            v-model="searchQuery"
+            @keyup.enter="handleSearch"
+            type="text"
+            placeholder="Buscar en la documentación... (Ctrl+K)"
+            class="w-full pl-10 pr-4 py-2 rounded-xl border border-gray-200 dark:border-gray-700 bg-gray-50 dark:bg-gray-800 text-gray-900 dark:text-gray-100 focus:outline-none focus:ring-2 focus:ring-primary-500 transition-all"
+          />
+          <kbd class="absolute right-3 top-1/2 -translate-y-1/2 px-2 py-1 text-xs text-gray-400 bg-gray-200 dark:bg-gray-700 rounded">
+            Ctrl+K
+          </kbd>
+        </div>
+      </div>
+
+      <!-- Right: Actions -->
+      <div class="flex items-center gap-2">
+        <!-- Mobile Search Toggle -->
+        <button 
+          @click="$router.push('/search')"
+          class="md:hidden p-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors"
+          aria-label="Search"
+        >
+          <Search class="w-5 h-5" />
+        </button>
+
+        <!-- Tools -->
+        <RouterLink 
+          to="/tools"
+          class="p-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors"
+          aria-label="Tools"
+        >
+          <Wrench class="w-5 h-5" />
+        </RouterLink>
+
+        <!-- Dark Mode Toggle -->
+        <button 
+          @click="toggleDark()"
+          class="p-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors"
+          aria-label="Toggle dark mode"
+        >
+          <Sun v-if="isDark" class="w-5 h-5" />
+          <Moon v-else class="w-5 h-5" />
+        </button>
+
+        <!-- GitHub Link -->
+        <a 
+          href="https://github.com/luongnv89/claude-howto"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="p-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors"
+          aria-label="GitHub"
+        >
+          <Github class="w-5 h-5" />
+        </a>
+      </div>
+    </div>
+  </header>
+</template>
+
+<script setup lang="ts">
+import { ref, watch } from 'vue'
+import { useRouter } from 'vue-router'
+import { useDark, useToggle } from '@vueuse/core'
+import { 
+  Menu, X, Search, Sun, Moon, Github, Wrench 
+} from 'lucide-vue-next'
+import { useSettingsStore } from '@/stores/settings'
+
+const router = useRouter()
+const settingsStore = useSettingsStore()
+
+const isDark = useDark()
+const toggleDark = useToggle(isDark)
+
+const searchQuery = ref('')
+const isSidebarOpen = ref(settingsStore.sidebarOpen)
+
+// Sync with settings store
+watch(() => settingsStore.sidebarOpen, (val) => {
+  isSidebarOpen.value = val
+})
+
+const toggleSidebar = () => {
+  settingsStore.toggleSidebar()
+}
+
+const handleSearch = () => {
+  if (searchQuery.value.trim()) {
+    router.push({ path: '/search', query: { q: searchQuery.value } })
+  }
+}
+
+// Ctrl+K to focus search
+if (typeof window !== 'undefined') {
+  window.addEventListener('keydown', (e) => {
+    if ((e.ctrlKey || e.metaKey) && e.key === 'k') {
+      e.preventDefault()
+      const searchInput = document.querySelector('input[type="text"]') as HTMLInputElement
+      searchInput?.focus()
+    }
+  })
+}
+</script>

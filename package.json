@@ -1,0 +1,44 @@
+{
+  "name": "claude-howto-frontend",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "Frontend Vue.js para la guía Claude HowTo",
+  "author": "Claude HowTo Team",
+  "license": "MIT",
+  "scripts": {
+    "dev": "vite",
+    "build": "vue-tsc && vite build",
+    "preview": "vite preview",
+    "lint": "eslint . --ext .vue,.js,.jsx,.cjs,.mjs,.ts,.tsx,.cts,.mts --fix",
+    "copy-content": "node scripts/copy-content.js && node scripts/update-logos.js",
+    "update-logos": "node scripts/update-logos.js",
+    "build-index": "node scripts/build-content-index.js"
+  },
+  "dependencies": {
+    "@vueuse/core": "^14.2.1",
+    "fuse.js": "^7.1.0",
+    "highlight.js": "^11.11.1",
+    "lucide-vue-next": "^0.460.0",
+    "markdown-it": "^14.1.1",
+    "mermaid": "^11.13.0",
+    "pinia": "^3.0.4",
+    "vue": "^3.5.31",
+    "vue-router": "^5.0.4"
+  },
+  "devDependencies": {
+    "@tailwindcss/postcss": "^4.2.2",
+    "@types/markdown-it": "^14.1.2",
+    "@types/node": "^25.5.0",
+    "@vitejs/plugin-vue": "^6.0.5",
+    "autoprefixer": "^10.4.27",
+    "postcss": "^8.5.8",
+    "tailwindcss": "^4.2.2",
+    "terser": "^5.46.1",
+    "typescript": "^6.0.2",
+    "vite": "^8.0.3",
+    "vue-tsc": "^3.2.6"
+  },
+  "engines": {
+    "node": ">=20.0.0"
+  }
+}
