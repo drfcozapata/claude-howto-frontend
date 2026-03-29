@@ -99,7 +99,13 @@ export async function renderMermaidDiagrams(container?: HTMLElement) {
 }
 
 export function parseMarkdown(content: string): string {
-  return md.render(content)
+  // Remove YAML frontmatter (everything between --- at the start)
+  const contentWithoutFrontmatter = content.replace(/^---[\s\S]*?---\n/, '')
+  
+  // Remove any remaining standalone '---' lines that might be frontmatter remnants
+  const cleanedContent = contentWithoutFrontmatter.replace(/^\s*---\s*$/gm, '')
+  
+  return md.render(cleanedContent)
 }
 
 export default md
