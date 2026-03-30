@@ -1,11 +1,11 @@
 <template>
-  <aside 
+  <aside
     :class="[
-      'fixed lg:sticky top-16 left-0 z-40 h-[calc(100vh-4rem)] w-72 overflow-y-auto border-r border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-900 transition-transform duration-300 scrollbar-thin',
+      'fixed lg:sticky top-16 left-0 z-40 h-full lg:h-[calc(100vh-4rem)] w-72 overflow-y-auto border-r border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-900 transition-transform duration-300 scrollbar-thin',
       isOpen ? 'translate-x-0' : '-translate-x-full lg:translate-x-0'
     ]"
   >
-    <nav class="p-4 space-y-2">
+    <nav class="p-4 space-y-2 pb-20">
       <!-- Main Navigation -->
       <div class="space-y-1">
         <RouterLink 

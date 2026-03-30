@@ -1,11 +1,11 @@
 <template>
   <footer class="border-t border-gray-200 dark:border-gray-700 bg-gray-100 dark:bg-gray-900 py-8">
     <div class="container mx-auto px-4">
-      <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
         <!-- Brand -->
-        <div class="col-span-1">
+        <div class="col-span-1 sm:col-span-2 lg:col-span-1">
           <div class="flex items-center gap-3 mb-4">
-            <img src="/resources/logos/logo.svg" alt="Domina Claude Code" class="w-52" />
+            <img src="/resources/logos/logo.svg" alt="Domina Claude Code" class="w-32 sm:w-40 lg:w-52" />
           </div>
           <p class="text-sm text-gray-600 dark:text-gray-400">
             Guía completa y gratuita para dominar Claude Code.
@@ -84,7 +84,7 @@
       <!-- Bottom Bar -->
       <div class="mt-8 pt-8 border-t border-gray-200 dark:border-gray-700 flex flex-col sm:flex-row justify-between items-center gap-4">
         <p class="text-sm text-gray-600 dark:text-gray-400">
-          Todos los derechos reservados © {{ new Date().getFullYear() }} Creado con ❤️ para la comunidad por <a href="https://franciscozapata.dev" target="_blank" rel="noopener noreferrer" class="text-primary-600 hover:underline">Francisco Zapata</a>
+          © {{ new Date().getFullYear() }} Todos los derechos reservados. Creado con ❤️ para la comunidad por <a href="https://franciscozapata.dev" target="_blank" rel="noopener noreferrer" class="text-primary-600 hover:underline">Francisco Zapata</a>
         </p>
         <div class="flex items-center gap-4">
           <span class="text-sm text-gray-500 dark:text-gray-400">

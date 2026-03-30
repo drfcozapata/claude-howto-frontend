@@ -3,15 +3,6 @@
     <div class="container mx-auto px-4 h-16 flex items-center justify-between">
       <!-- Left: Logo & Menu Toggle -->
       <div class="flex items-center gap-4">
-        <button
-          @click="toggleSidebar"
-          class="lg:hidden p-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors"
-          aria-label="Toggle menu"
-        >
-          <Menu v-if="!isSidebarOpen" class="w-6 h-6" />
-          <X v-else class="w-6 h-6" />
-        </button>
-
         <RouterLink to="/" class="flex items-center gap-3 group">
           <img src="/resources/logos/logo.svg" alt="Domina Claude Code" class="w-36" />
         </RouterLink>
@@ -75,7 +66,7 @@ import { ref, watch } from 'vue'
 import { useRouter } from 'vue-router'
 import { useDark, useToggle } from '@vueuse/core'
 import {
-  Menu, X, Search, Sun, Moon, Github
+  Search, Sun, Moon, Github
 } from 'lucide-vue-next'
 import { useSettingsStore } from '@/stores/settings'
 
@@ -101,10 +92,6 @@ const isSidebarOpen = ref(settingsStore.sidebarOpen)
 watch(() => settingsStore.sidebarOpen, (val) => {
   isSidebarOpen.value = val
 })
-
-const toggleSidebar = () => {
-  settingsStore.toggleSidebar()
-}
 
 const handleSearch = () => {
   if (searchQuery.value.trim()) {
