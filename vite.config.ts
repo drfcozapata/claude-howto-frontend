@@ -1,12 +1,26 @@
-import { defineConfig } from 'vite'
+import { defineConfig, loadEnv, type Plugin } from 'vite'
 import vue from '@vitejs/plugin-vue'
 import path from 'path'
 import { fileURLToPath } from 'url'
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url))
 
-export default defineConfig({
-  plugins: [vue()],
+function injectSiteUrlForMeta(siteOrigin: string): Plugin {
+  return {
+    name: 'inject-site-url-meta',
+    transformIndexHtml(html) {
+      const origin = siteOrigin.replace(/\/+$/, '')
+      return html.split('%VITE_SITE_URL%').join(origin)
+    }
+  }
+}
+
+export default defineConfig(({ mode }) => {
+  const env = loadEnv(mode, process.cwd(), '')
+  const siteUrl = env.VITE_SITE_URL ?? ''
+
+  return {
+  plugins: [vue(), injectSiteUrlForMeta(siteUrl)],
   resolve: {
     alias: {
       '@': path.resolve(__dirname, './src')
@@ -44,5 +58,6 @@ export default defineConfig({
   },
   optimizeDeps: {
     include: ['vue', 'vue-router', 'pinia', 'markdown-it', 'mermaid', 'fuse.js']
+  }
   }
 })
